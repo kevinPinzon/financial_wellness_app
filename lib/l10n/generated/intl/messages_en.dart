@@ -28,6 +28,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "financialDescription": MessageLookupByLibrary.simpleMessage(
       "\nEnter your financial information below",
     ),
+    "financialDescription2": MessageLookupByLibrary.simpleMessage(
+      "Your financial information is encrypted and secure. We\'ll never share or sell any of your personal data.",
+    ),
     "financialSubTitle": MessageLookupByLibrary.simpleMessage(
       "Financial wellness test",
     ),

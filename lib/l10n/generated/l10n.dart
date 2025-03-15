@@ -174,6 +174,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Your financial information is encrypted and secure. We'll never share or sell any of your personal data.`
+  String get financialDescription2 {
+    return Intl.message(
+      'Your financial information is encrypted and secure. We\'ll never share or sell any of your personal data.',
+      name: 'financialDescription2',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -6,7 +6,7 @@ import 'sizes.dart';
 
 final titleBlue = GoogleFonts.workSans(
   fontWeight: FontWeight.w400,
-  fontSize: mediumTextSize,
+  fontSize: bigTextSize,
   color: AppColors.fontColorTextBlue,
 );
 
@@ -23,10 +23,9 @@ final titleBlack = GoogleFonts.workSans(
 );
 
 final textGray = GoogleFonts.workSans(
-  fontWeight: FontWeight.w400,
-  fontSize: smallTextSize,
-  color: AppColors.fontColorText2,
-);
+    fontWeight: FontWeight.w400,
+    fontSize: smallTextSize,
+    color: AppColors.fontColorText2);
 
 final textNormal = GoogleFonts.workSans(
   fontWeight: FontWeight.w400,
@@ -34,8 +33,14 @@ final textNormal = GoogleFonts.workSans(
   color: AppColors.fontColorText1,
 );
 
-final textGray2 = GoogleFonts.workSans(
-  fontWeight: FontWeight.w400,
-  fontSize: smallTextSize,
-  color: AppColors.fontColorText2,
+final btnTextWhite = GoogleFonts.workSans(
+  fontWeight: FontWeight.w500,
+  fontSize: mediumTextSize,
+  color: AppColors.white,
+);
+
+final btnTextBlue = GoogleFonts.workSans(
+  fontWeight: FontWeight.w500,
+  fontSize: mediumTextSize,
+  color: AppColors.blue,
 );

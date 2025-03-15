@@ -1,18 +1,26 @@
 import 'package:financial_wellness_app/core/common/resource_images.dart';
 import 'package:financial_wellness_app/core/theme/colors.dart';
 import 'package:financial_wellness_app/core/theme/fonts.dart';
+import 'package:financial_wellness_app/core/utils/keyboard_actions_configs.dart';
+import 'package:financial_wellness_app/feature/financial_calculator/presentation/widgets/custom_button.dart';
+import 'package:financial_wellness_app/feature/financial_calculator/presentation/widgets/custom_input_widget.dart';
 import 'package:financial_wellness_app/l10n/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:keyboard_actions/keyboard_actions.dart';
 import '../bloc/financial_status_bloc.dart';
 import '../bloc/financial_status_event.dart';
 import '../bloc/financial_status_state.dart';
+import 'package:financial_wellness_app/core/utils/validation_methods.dart'; // Import validation methods
 
 class FinancialStatusFormPage extends StatelessWidget {
   final TextEditingController annualIncomeController = TextEditingController();
   final TextEditingController monthlyCostsController = TextEditingController();
+  final FocusNode annualIncomeNode = FocusNode();
+  final FocusNode monthlyCostsNode = FocusNode();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   FinancialStatusFormPage({super.key});
 
@@ -91,52 +99,91 @@ class FinancialStatusFormPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        TextField(
-                          controller: annualIncomeController,
-                          decoration: InputDecoration(
-                            labelText: S.of(context).annualIncomeLabel,
+                        KeyboardActions(
+                          disableScroll: true,
+                          config: financialStatusConfig(
+                              annualIncomeNode, monthlyCostsNode),
+                          child: Form(
+                            key: formKey,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CustomInput(
+                                  hintText: "\$",
+                                  inputFieldTitle:
+                                      S.of(context).annualIncomeLabel,
+                                  controller: annualIncomeController,
+                                  keyboardType: TextInputType.number,
+                                  focusNode: annualIncomeNode,
+                                  validator: (value) =>
+                                      ValidationMethods.validateAnnualIncome(
+                                          value),
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                CustomInput(
+                                  hintText: "\$",
+                                  inputFieldTitle:
+                                      S.of(context).monthlyCostsLabel,
+                                  controller: monthlyCostsController,
+                                  keyboardType: TextInputType.number,
+                                  focusNode: monthlyCostsNode,
+                                  validator: (value) =>
+                                      ValidationMethods.validateMonthlyCosts(
+                                          value),
+                                ),
+                              ],
+                            ),
                           ),
-                          keyboardType: TextInputType.number,
                         ),
-                        TextField(
-                          controller: monthlyCostsController,
-                          decoration: InputDecoration(
-                            labelText: S.of(context).monthlyCostsLabel,
-                          ),
-                          keyboardType: TextInputType.number,
-                        ),
-                        ElevatedButton(
+                        CustomButton(
+                          text: S.of(context).continueButtonLabel,
                           onPressed: () {
-                            final annualIncome =
-                                double.tryParse(annualIncomeController.text) ??
-                                    0;
-                            final monthlyCosts =
-                                double.tryParse(monthlyCostsController.text) ??
-                                    0;
+                            if (formKey.currentState?.validate() ?? false) {
+                              final annualIncome = double.tryParse(
+                                      annualIncomeController.text) ??
+                                  0;
+                              final monthlyCosts = double.tryParse(
+                                      monthlyCostsController.text) ??
+                                  0;
 
-                            if (annualIncome > 0 && monthlyCosts > 0) {
                               context.read<FinancialStatusBloc>().add(
                                     SubmitFinancialDataEvent(
                                       annualIncome: annualIncome,
                                       monthlyCosts: monthlyCosts,
                                     ),
                                   );
-                            } else {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                    content: Text(
-                                        S.of(context).invalidValuesMessage)),
-                              );
                             }
                           },
-                          child: Text(S.of(context).continueButtonLabel),
                         ),
                       ],
                     ),
                   ),
                 ),
               ),
-              const Flexible(flex: 2, child: Placeholder())
+              Flexible(
+                  flex: 2,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      children: [
+                        SvgPicture.asset(
+                          lock,
+                          width: 24,
+                          height: 24,
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          S.of(context).financialDescription2,
+                          style: textGray,
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                  ))
             ],
           ),
         ),
