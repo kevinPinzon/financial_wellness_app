@@ -1,6 +1,10 @@
+import 'package:financial_wellness_app/core/common/resource_images.dart';
+import 'package:financial_wellness_app/core/theme/colors.dart';
+import 'package:financial_wellness_app/core/theme/fonts.dart';
 import 'package:financial_wellness_app/l10n/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import '../bloc/financial_status_bloc.dart';
 import '../bloc/financial_status_event.dart';
@@ -15,7 +19,6 @@ class FinancialStatusFormPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(S.of(context).appTitle)),
       body: BlocListener<FinancialStatusBloc, FinancialStatusState>(
         listener: (context, state) {
           if (state is FinancialStatusLoaded) {
@@ -29,47 +32,111 @@ class FinancialStatusFormPage extends StatelessWidget {
           }
         },
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(20),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              TextField(
-                controller: annualIncomeController,
-                decoration: InputDecoration(
-                  labelText: S.of(context).annualIncomeLabel,
+              Flexible(
+                flex: 1,
+                child: SvgPicture.asset(
+                  kalshiLogoBlack,
+                  width: 76,
+                  height: 20,
                 ),
-                keyboardType: TextInputType.number,
               ),
-              TextField(
-                controller: monthlyCostsController,
-                decoration: InputDecoration(
-                  labelText: S.of(context).monthlyCostsLabel,
+              Flexible(
+                flex: 1,
+                child: RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: S.of(context).financialTitlePart1,
+                        style: titleBlue,
+                      ),
+                      TextSpan(
+                        text: S.of(context).financialTitlePart2,
+                        style: titleBlueBold,
+                      )
+                    ],
+                  ),
                 ),
-                keyboardType: TextInputType.number,
               ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  final annualIncome =
-                      double.tryParse(annualIncomeController.text) ?? 0;
-                  final monthlyCosts =
-                      double.tryParse(monthlyCostsController.text) ?? 0;
-
-                  if (annualIncome > 0 && monthlyCosts > 0) {
-                    context.read<FinancialStatusBloc>().add(
-                          SubmitFinancialDataEvent(
-                            annualIncome: annualIncome,
-                            monthlyCosts: monthlyCosts,
+              Expanded(
+                flex: 5,
+                child: Card(
+                  color: AppColors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SvgPicture.asset(
+                          logo,
+                          width: 48,
+                          height: 48,
+                        ),
+                        RichText(
+                          textAlign: TextAlign.center,
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: S.of(context).financialSubTitle,
+                                style: titleBlack,
+                              ),
+                              TextSpan(
+                                text: S.of(context).financialDescription,
+                                style: textGray,
+                              )
+                            ],
                           ),
-                        );
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                          content: Text(S.of(context).invalidValuesMessage)),
-                    );
-                  }
-                },
-                child: Text(S.of(context).continueButtonLabel),
+                        ),
+                        TextField(
+                          controller: annualIncomeController,
+                          decoration: InputDecoration(
+                            labelText: S.of(context).annualIncomeLabel,
+                          ),
+                          keyboardType: TextInputType.number,
+                        ),
+                        TextField(
+                          controller: monthlyCostsController,
+                          decoration: InputDecoration(
+                            labelText: S.of(context).monthlyCostsLabel,
+                          ),
+                          keyboardType: TextInputType.number,
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            final annualIncome =
+                                double.tryParse(annualIncomeController.text) ??
+                                    0;
+                            final monthlyCosts =
+                                double.tryParse(monthlyCostsController.text) ??
+                                    0;
+
+                            if (annualIncome > 0 && monthlyCosts > 0) {
+                              context.read<FinancialStatusBloc>().add(
+                                    SubmitFinancialDataEvent(
+                                      annualIncome: annualIncome,
+                                      monthlyCosts: monthlyCosts,
+                                    ),
+                                  );
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                    content: Text(
+                                        S.of(context).invalidValuesMessage)),
+                              );
+                            }
+                          },
+                          child: Text(S.of(context).continueButtonLabel),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
+              const Flexible(flex: 2, child: Placeholder())
             ],
           ),
         ),

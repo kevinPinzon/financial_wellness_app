@@ -10,6 +10,12 @@ final titleBlue = GoogleFonts.workSans(
   color: AppColors.fontColorTextBlue,
 );
 
+final titleBlueBold = GoogleFonts.workSans(
+  fontWeight: FontWeight.w600,
+  fontSize: bigTextSize,
+  color: AppColors.fontColorTextBlue,
+);
+
 final titleBlack = GoogleFonts.workSans(
   fontWeight: FontWeight.w500,
   fontSize: bigTextSize,

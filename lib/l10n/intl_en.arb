@@ -6,5 +6,9 @@
   "invalidValuesMessage": "Please enter valid values",
   "continueButtonLabel": "Continue",
   "resultPageTitle": "Financial Wellness Result",
-  "scoreMessage": "Your financial wellness score is:"
+  "scoreMessage": "Your financial wellness score is:",
+  "financialTitlePart1": "Let's find out your financial\n",
+  "financialTitlePart2": "wellness score.",
+  "financialSubTitle": "Financial wellness test",
+  "financialDescription": "\nEnter your financial information below"
 }

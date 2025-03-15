@@ -5,8 +5,8 @@ import 'colors.dart';
 class AppTheme {
   static ThemeData themeData() {
     return ThemeData(
-      primaryColor: Colors.grey[700],
-      scaffoldBackgroundColor: Colors.grey[100],
+      primaryColor: AppColors.blue,
+      scaffoldBackgroundColor: AppColors.white,
       appBarTheme: AppBarTheme(
         color: Colors.grey[700],
       ),
@@ -30,12 +30,12 @@ class AppTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+          backgroundColor: WidgetStateProperty.all<Color>(AppColors.blue),
         ),
       ),
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
-          foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+          foregroundColor: WidgetStateProperty.all<Color>(AppColors.blue),
         ),
       ),
     );
@@ -45,7 +45,7 @@ class AppTheme {
 const inputDecorationTheme = InputDecorationTheme(
   enabledBorder: OutlineInputBorder(
     borderSide: BorderSide(
-      color: onBackgroundColor,
+      color: AppColors.blue,
       width: 1,
     ),
   ),

@@ -25,6 +25,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "annualIncomeLabel": MessageLookupByLibrary.simpleMessage("Annual Income"),
     "appTitle": MessageLookupByLibrary.simpleMessage("Financial Wellness"),
     "continueButtonLabel": MessageLookupByLibrary.simpleMessage("Continue"),
+    "financialDescription": MessageLookupByLibrary.simpleMessage(
+      "\nEnter your financial information below",
+    ),
+    "financialSubTitle": MessageLookupByLibrary.simpleMessage(
+      "Financial wellness test",
+    ),
+    "financialTitlePart1": MessageLookupByLibrary.simpleMessage(
+      "Let\'s find out your financial\n",
+    ),
+    "financialTitlePart2": MessageLookupByLibrary.simpleMessage(
+      "wellness score.",
+    ),
     "greeting": MessageLookupByLibrary.simpleMessage("Welcome to the app!"),
     "invalidValuesMessage": MessageLookupByLibrary.simpleMessage(
       "Please enter valid values",

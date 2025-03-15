@@ -134,6 +134,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Let's find out your financial\n`
+  String get financialTitlePart1 {
+    return Intl.message(
+      'Let\'s find out your financial\n',
+      name: 'financialTitlePart1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `wellness score.`
+  String get financialTitlePart2 {
+    return Intl.message(
+      'wellness score.',
+      name: 'financialTitlePart2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Financial wellness test`
+  String get financialSubTitle {
+    return Intl.message(
+      'Financial wellness test',
+      name: 'financialSubTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `\nEnter your financial information below`
+  String get financialDescription {
+    return Intl.message(
+      '\nEnter your financial information below',
+      name: 'financialDescription',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
