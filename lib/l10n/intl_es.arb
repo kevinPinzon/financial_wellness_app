@@ -1,4 +1,10 @@
 {
   "appTitle": "Bienestar Financiero",
-  "greeting": "¡Bienvenido a la aplicación!"
+  "greeting": "¡Bienvenido a la aplicación!",
+  "annualIncomeLabel": "Ingreso Anual",
+  "monthlyCostsLabel": "Costos Mensuales",
+  "invalidValuesMessage": "Por favor, ingresa valores válidos",
+  "continueButtonLabel": "Continuar",
+  "resultPageTitle": "Resultado del Bienestar Financiero",
+  "scoreMessage": "Tu puntaje de bienestar financiero es:"
 }

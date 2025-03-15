@@ -2,6 +2,7 @@ import 'package:financial_wellness_app/core/common/resource_images.dart';
 import 'package:financial_wellness_app/l10n/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -9,9 +10,9 @@ class WelcomeScreen extends StatelessWidget {
   Future<void> processScreen(BuildContext context) async {
     await Future.delayed(const Duration(seconds: 2));
 
-    // if (context.mounted) {
-    //   context.go('/home');
-    // }
+    if (context.mounted) {
+      context.go('/home');
+    }
   }
 
   @override

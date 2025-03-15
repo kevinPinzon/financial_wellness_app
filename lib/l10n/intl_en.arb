@@ -1,4 +1,10 @@
 {
   "appTitle": "Financial Wellness",
-  "greeting": "Welcome to the app!"
+  "greeting": "Welcome to the app!",
+  "annualIncomeLabel": "Annual Income",
+  "monthlyCostsLabel": "Monthly Costs",
+  "invalidValuesMessage": "Please enter valid values",
+  "continueButtonLabel": "Continue",
+  "resultPageTitle": "Financial Wellness Result",
+  "scoreMessage": "Your financial wellness score is:"
 }

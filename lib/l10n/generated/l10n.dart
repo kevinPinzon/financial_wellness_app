@@ -74,6 +74,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Annual Income`
+  String get annualIncomeLabel {
+    return Intl.message(
+      'Annual Income',
+      name: 'annualIncomeLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monthly Costs`
+  String get monthlyCostsLabel {
+    return Intl.message(
+      'Monthly Costs',
+      name: 'monthlyCostsLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter valid values`
+  String get invalidValuesMessage {
+    return Intl.message(
+      'Please enter valid values',
+      name: 'invalidValuesMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continueButtonLabel {
+    return Intl.message(
+      'Continue',
+      name: 'continueButtonLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Financial Wellness Result`
+  String get resultPageTitle {
+    return Intl.message(
+      'Financial Wellness Result',
+      name: 'resultPageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your financial wellness score is:`
+  String get scoreMessage {
+    return Intl.message(
+      'Your financial wellness score is:',
+      name: 'scoreMessage',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

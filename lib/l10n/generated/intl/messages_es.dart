@@ -22,9 +22,23 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "annualIncomeLabel": MessageLookupByLibrary.simpleMessage("Ingreso Anual"),
     "appTitle": MessageLookupByLibrary.simpleMessage("Bienestar Financiero"),
+    "continueButtonLabel": MessageLookupByLibrary.simpleMessage("Continuar"),
     "greeting": MessageLookupByLibrary.simpleMessage(
       "¡Bienvenido a la aplicación!",
+    ),
+    "invalidValuesMessage": MessageLookupByLibrary.simpleMessage(
+      "Por favor, ingresa valores válidos",
+    ),
+    "monthlyCostsLabel": MessageLookupByLibrary.simpleMessage(
+      "Costos Mensuales",
+    ),
+    "resultPageTitle": MessageLookupByLibrary.simpleMessage(
+      "Resultado del Bienestar Financiero",
+    ),
+    "scoreMessage": MessageLookupByLibrary.simpleMessage(
+      "Tu puntaje de bienestar financiero es:",
     ),
   };
 }
