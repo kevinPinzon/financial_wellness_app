@@ -1,7 +1,7 @@
 import 'package:financial_wellness_app/core/common/resource_images.dart';
+import 'package:financial_wellness_app/l10n/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -24,12 +24,12 @@ class WelcomeScreen extends StatelessWidget {
           children: [
             SvgPicture.asset(
               logo,
-              width: 500,
-              height: 500,
+              width: 200,
+              height: 200,
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 60),
             Text(
-              'Financial Wellness',
+              S.of(context).appTitle,
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).textTheme.bodyLarge?.color,
