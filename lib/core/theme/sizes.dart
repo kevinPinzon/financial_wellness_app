@@ -3,3 +3,4 @@ const smallTextSize = 14.0;
 const mediumTextSize = 16.0;
 const bigTextSize = 18.0;
 const bigestTextSize = 20.0;
+const enormousTextSize = 24.0;

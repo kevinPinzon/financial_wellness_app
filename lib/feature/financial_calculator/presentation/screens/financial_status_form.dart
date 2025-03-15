@@ -2,6 +2,8 @@ import 'package:financial_wellness_app/core/common/resource_images.dart';
 import 'package:financial_wellness_app/core/theme/colors.dart';
 import 'package:financial_wellness_app/core/theme/fonts.dart';
 import 'package:financial_wellness_app/core/utils/keyboard_actions_configs.dart';
+import 'package:financial_wellness_app/core/utils/money_input_formatter.dart';
+import 'package:financial_wellness_app/core/utils/validation_methods.dart';
 import 'package:financial_wellness_app/feature/financial_calculator/presentation/widgets/custom_button.dart';
 import 'package:financial_wellness_app/feature/financial_calculator/presentation/widgets/custom_input_widget.dart';
 import 'package:financial_wellness_app/l10n/generated/l10n.dart';
@@ -13,7 +15,6 @@ import 'package:keyboard_actions/keyboard_actions.dart';
 import '../bloc/financial_status_bloc.dart';
 import '../bloc/financial_status_event.dart';
 import '../bloc/financial_status_state.dart';
-import 'package:financial_wellness_app/core/utils/validation_methods.dart'; // Import validation methods
 
 class FinancialStatusFormPage extends StatelessWidget {
   final TextEditingController annualIncomeController = TextEditingController();
@@ -45,7 +46,7 @@ class FinancialStatusFormPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Flexible(
-                flex: 1,
+                flex: 2,
                 child: SvgPicture.asset(
                   kalshiLogoBlack,
                   width: 76,
@@ -53,7 +54,7 @@ class FinancialStatusFormPage extends StatelessWidget {
                 ),
               ),
               Flexible(
-                flex: 1,
+                flex: 2,
                 child: RichText(
                   textAlign: TextAlign.center,
                   text: TextSpan(
@@ -71,7 +72,7 @@ class FinancialStatusFormPage extends StatelessWidget {
                 ),
               ),
               Expanded(
-                flex: 5,
+                flex: 6,
                 child: Card(
                   color: AppColors.white,
                   child: Padding(
@@ -109,12 +110,22 @@ class FinancialStatusFormPage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 CustomInput(
-                                  hintText: "\$",
+                                  prefixIcon: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 8, right: 4, top: 8, bottom: 4),
+                                    child: SvgPicture.asset(
+                                      dollar,
+                                      width: 24,
+                                      height: 24,
+                                    ),
+                                  ),
+                                  hintText: "",
                                   inputFieldTitle:
                                       S.of(context).annualIncomeLabel,
                                   controller: annualIncomeController,
                                   keyboardType: TextInputType.number,
                                   focusNode: annualIncomeNode,
+                                  inputFormatters: [MoneyInputFormatter()],
                                   validator: (value) =>
                                       ValidationMethods.validateAnnualIncome(
                                           value),
@@ -123,12 +134,22 @@ class FinancialStatusFormPage extends StatelessWidget {
                                   height: 20,
                                 ),
                                 CustomInput(
-                                  hintText: "\$",
+                                  prefixIcon: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 8, right: 4, top: 8, bottom: 4),
+                                    child: SvgPicture.asset(
+                                      dollar,
+                                      width: 24,
+                                      height: 24,
+                                    ),
+                                  ),
+                                  hintText: "",
                                   inputFieldTitle:
                                       S.of(context).monthlyCostsLabel,
                                   controller: monthlyCostsController,
                                   keyboardType: TextInputType.number,
                                   focusNode: monthlyCostsNode,
+                                  inputFormatters: [MoneyInputFormatter()],
                                   validator: (value) =>
                                       ValidationMethods.validateMonthlyCosts(
                                           value),
@@ -142,10 +163,12 @@ class FinancialStatusFormPage extends StatelessWidget {
                           onPressed: () {
                             if (formKey.currentState?.validate() ?? false) {
                               final annualIncome = double.tryParse(
-                                      annualIncomeController.text) ??
+                                      annualIncomeController.text
+                                          .replaceAll(RegExp(r'[^\d]'), '')) ??
                                   0;
                               final monthlyCosts = double.tryParse(
-                                      monthlyCostsController.text) ??
+                                      monthlyCostsController.text
+                                          .replaceAll(RegExp(r'[^\d]'), '')) ??
                                   0;
 
                               context.read<FinancialStatusBloc>().add(

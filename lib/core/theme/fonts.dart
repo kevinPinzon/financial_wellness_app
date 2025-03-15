@@ -44,3 +44,15 @@ final btnTextBlue = GoogleFonts.workSans(
   fontSize: mediumTextSize,
   color: AppColors.blue,
 );
+
+final inputText = GoogleFonts.workSans(
+  fontWeight: FontWeight.w500,
+  fontSize: enormousTextSize,
+  color: AppColors.fontColorTextBlack,
+);
+
+final inputHint = GoogleFonts.workSans(
+  fontWeight: FontWeight.w500,
+  fontSize: enormousTextSize,
+  color: AppColors.fontColorText2,
+);

@@ -1,19 +1,18 @@
 import 'package:financial_wellness_app/core/common/enums.dart';
 import 'package:financial_wellness_app/core/theme/colors.dart';
 import 'package:financial_wellness_app/core/theme/fonts.dart';
-import 'package:financial_wellness_app/core/theme/sizes.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
-    Key? key,
+    super.key,
     this.style = CustomButtonStyle.enabled,
     required this.text,
     required this.onPressed,
     this.fontSize,
     this.height,
     this.leadingIcon,
-  }) : super(key: key);
+  });
 
   final CustomButtonStyle style;
   final String text;
