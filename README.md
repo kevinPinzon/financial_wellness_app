@@ -23,7 +23,9 @@ The **Financial Wellness App** is a Flutter-based application designed to help u
 - **flutter_svg:** For rendering SVG images.
 
 ## Project Structure
+The project follows a modular architecture with the following structure:
 
+```
 financial_wellness_app/
 │
 ├── assets/                              # Contains images and icons used in the app
@@ -53,12 +55,13 @@ financial_wellness_app/
 │   └── main.dart                        # The entry point of the application
 │
 └── pubspec.yaml                         # Contains project metadata and dependencies
+```
 
 ## 📸 Screenshots
 
 | Form Screen | Result Screen | Result Screen |
 |-------------|--------------|----------------|
-| <img src="assets/screenshots/1.png" width="200"/> | <img src="assets/screenshots/2.png" width="200"/> | <img src="assets/screenshots/4.png" width="200"/> |
+| <img src="assets/screenshots/1.png" width="200"/> | <img src="assets/screenshots/3.png" width="200"/> | <img src="assets/screenshots/2.png" width="200"/> |
 
 ## Getting Started
 
