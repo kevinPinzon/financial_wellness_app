@@ -57,6 +57,29 @@ financial_wellness_app/
 └── pubspec.yaml                         # Contains project metadata and dependencies
 ```
 
+### Folder Structure
+
+The project is organized as follows:
+
+- **lib/**
+  - **core/**: Contains utility classes, dependency injection setup, and common resources like images and colors.
+  - **feature/**: The feature-specific code for financial calculations and the presentation layer.
+  - **l10n/**: Localization files for supporting multiple languages (English and Spanish).
+- **assets/**: Contains images and icons used throughout the app.
+
+### Localization
+
+The app supports English and Spanish. The localization files are located in `lib/l10n/`, and translations are automatically generated using the `flutter_intl` package.
+
+### Dependencies
+
+- **flutter_bloc:** A package for managing app state using the BLoC pattern.
+- **flutter_svg:** To display SVG images.
+- **get_it:** For dependency injection.
+- **go_router:** For handling routing and navigation.
+- **intl:** For internationalization and date formatting.
+- **keyboard_actions:** For managing keyboard actions and focus.
+
 ## 📸 Screenshots
 
 | Form Screen | Result Screen | Result Screen |
@@ -92,29 +115,6 @@ financial_wellness_app/
    ```bash
    flutter run
    ```
-
-### Folder Structure
-
-The project is organized as follows:
-
-- **lib/**
-  - **core/**: Contains utility classes, dependency injection setup, and common resources like images and colors.
-  - **feature/**: The feature-specific code for financial calculations and the presentation layer.
-  - **l10n/**: Localization files for supporting multiple languages (English and Spanish).
-- **assets/**: Contains images and icons used throughout the app.
-
-### Localization
-
-The app supports English and Spanish. The localization files are located in `lib/l10n/`, and translations are automatically generated using the `flutter_intl` package.
-
-### Dependencies
-
-- **flutter_bloc:** A package for managing app state using the BLoC pattern.
-- **flutter_svg:** To display SVG images.
-- **get_it:** For dependency injection.
-- **go_router:** For handling routing and navigation.
-- **intl:** For internationalization and date formatting.
-- **keyboard_actions:** For managing keyboard actions and focus.
 
 ## How It Works
 
