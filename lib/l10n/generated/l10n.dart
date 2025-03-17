@@ -184,6 +184,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Here's your `
+  String get financialStatusSubTitle1 {
+    return Intl.message(
+      'Here\'s your ',
+      name: 'financialStatusSubTitle1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `financial wellness score.`
+  String get financialStatusSubTitle2 {
+    return Intl.message(
+      'financial wellness score.',
+      name: 'financialStatusSubTitle2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Congratulations!`
+  String get financialTitleHealthy {
+    return Intl.message(
+      'Congratulations!',
+      name: 'financialTitleHealthy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There is room for improvement.`
+  String get financialTitleMedium {
+    return Intl.message(
+      'There is room for improvement.',
+      name: 'financialTitleMedium',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Caution!`
+  String get financialTitleLow {
+    return Intl.message(
+      'Caution!',
+      name: 'financialTitleLow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your financial wellness score is Healthy.`
+  String get financialDescriptionHealthy {
+    return Intl.message(
+      'Your financial wellness score is Healthy.',
+      name: 'financialDescriptionHealthy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your financial wellness score is Average.`
+  String get financialDescriptionMedium {
+    return Intl.message(
+      'Your financial wellness score is Average.',
+      name: 'financialDescriptionMedium',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your financial wellness score is Unhealthy.`
+  String get financialDescriptionLow {
+    return Intl.message(
+      'Your financial wellness score is Unhealthy.',
+      name: 'financialDescriptionLow',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

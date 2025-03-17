@@ -31,8 +31,30 @@ class MessageLookup extends MessageLookupByLibrary {
     "financialDescription2": MessageLookupByLibrary.simpleMessage(
       "Your financial information is encrypted and secure. We\'ll never share or sell any of your personal data.",
     ),
+    "financialDescriptionHealthy": MessageLookupByLibrary.simpleMessage(
+      "Your financial wellness score is Healthy.",
+    ),
+    "financialDescriptionLow": MessageLookupByLibrary.simpleMessage(
+      "Your financial wellness score is Unhealthy.",
+    ),
+    "financialDescriptionMedium": MessageLookupByLibrary.simpleMessage(
+      "Your financial wellness score is Average.",
+    ),
+    "financialStatusSubTitle1": MessageLookupByLibrary.simpleMessage(
+      "Here\'s your ",
+    ),
+    "financialStatusSubTitle2": MessageLookupByLibrary.simpleMessage(
+      "financial wellness score.",
+    ),
     "financialSubTitle": MessageLookupByLibrary.simpleMessage(
       "Financial wellness test",
+    ),
+    "financialTitleHealthy": MessageLookupByLibrary.simpleMessage(
+      "Congratulations!",
+    ),
+    "financialTitleLow": MessageLookupByLibrary.simpleMessage("Caution!"),
+    "financialTitleMedium": MessageLookupByLibrary.simpleMessage(
+      "There is room for improvement.",
     ),
     "financialTitlePart1": MessageLookupByLibrary.simpleMessage(
       "Let\'s find out your financial\n",

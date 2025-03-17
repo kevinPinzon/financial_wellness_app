@@ -11,5 +11,13 @@
   "financialTitlePart2": "wellness score.",
   "financialSubTitle": "Financial wellness test",
   "financialDescription": "\nEnter your financial information below",
-  "financialDescription2": "Your financial information is encrypted and secure. We'll never share or sell any of your personal data."
+  "financialDescription2": "Your financial information is encrypted and secure. We'll never share or sell any of your personal data.",
+  "financialStatusSubTitle1": "Here's your ",
+  "financialStatusSubTitle2": "financial wellness score.",
+  "financialTitleHealthy": "Congratulations!",
+  "financialTitleMedium": "There is room for improvement.",
+  "financialTitleLow": "Caution!",
+  "financialDescriptionHealthy": "Your financial wellness score is Healthy.",
+  "financialDescriptionMedium": "Your financial wellness score is Average.",
+  "financialDescriptionLow": "Your financial wellness score is Unhealthy."
 }

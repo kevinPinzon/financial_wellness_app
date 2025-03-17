@@ -1,5 +1,5 @@
 import 'package:financial_wellness_app/feature/financial_calculator/presentation/screens/financial_status_form.dart';
-import 'package:financial_wellness_app/feature/financial_calculator/presentation/screens/financial_status_result.dart';
+import 'package:financial_wellness_app/feature/financial_calculator/presentation/screens/financial_status_result_page.dart';
 import 'package:financial_wellness_app/feature/init/presentation/screens/welcome_screen.dart';
 import 'package:go_router/go_router.dart';
 
