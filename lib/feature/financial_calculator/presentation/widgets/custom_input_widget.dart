@@ -48,7 +48,7 @@ class CustomInput extends StatelessWidget {
         children: [
           _inputTitle(context, inputFieldTitle),
           const SizedBox(
-            height: 8,
+            height: 4,
           ),
           _textFormField(context),
         ],

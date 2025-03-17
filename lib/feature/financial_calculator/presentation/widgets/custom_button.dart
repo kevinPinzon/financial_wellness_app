@@ -33,10 +33,10 @@ class CustomButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
             side: BorderSide(
-              color: style == CustomButtonStyle.outline
-                  ? Theme.of(context).colorScheme.onSurface
-                  : Colors.transparent,
-            ),
+                color: style == CustomButtonStyle.outline
+                    ? AppColors.blue
+                    : Colors.transparent,
+                width: 2),
           ),
           backgroundColor: _backgroundColor(context),
         ),
@@ -79,6 +79,11 @@ class CustomButton extends StatelessWidget {
   }
 
   Widget _textBtn(BuildContext context) {
-    return Text(text, style: btnTextWhite);
+    switch (style) {
+      case CustomButtonStyle.enabled:
+        return Text(text, style: btnTextWhite);
+      default:
+        return Text(text, style: btnTextBlue);
+    }
   }
 }
