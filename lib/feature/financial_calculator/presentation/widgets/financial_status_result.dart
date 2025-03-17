@@ -17,6 +17,7 @@ class FinancialStatusResult extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     Color progressColor1 = getProgressColor(score, 3);
     Color progressColor2 = getProgressColor(score, 2);
     Color progressColor3 = getProgressColor(score, 1);
@@ -31,17 +32,17 @@ class FinancialStatusResult extends StatelessWidget {
                 CustomLinearProgressIndicator(
                   value: 1,
                   progressColor: progressColor1,
-                  leftPosition: 215,
+                  leftPosition: size.width * 0.47,
                 ),
                 CustomLinearProgressIndicator(
                   value: 1,
                   progressColor: progressColor2,
-                  leftPosition: 145,
+                  leftPosition: size.width * 0.29,
                 ),
                 CustomLinearProgressIndicator(
                   value: 1,
                   progressColor: progressColor3,
-                  leftPosition: 75,
+                  leftPosition: size.width * 0.10,
                 ),
               ],
             ),

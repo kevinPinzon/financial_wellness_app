@@ -11,21 +11,26 @@ class MoneyInputFormatter extends TextInputFormatter {
       TextEditingValue oldValue, TextEditingValue newValue) {
     String newText = newValue.text;
 
-    // Remove any non-numeric characters (except decimals).
+    if (newText.isEmpty) {
+      return const TextEditingValue(
+          text: '', selection: TextSelection.collapsed(offset: 0));
+    }
+
+    // Remove any non-numeric characters (except decimals)
     newText = newText.replaceAll(RegExp(r'[^0-9]'), '');
 
-    // Convert the string to an integer.
+    // Convert the string to an integer
     final value = int.tryParse(newText);
 
-    // If the value is not a valid number, return the old value.
+    // If the value is not a valid number, return the old value
     if (value == null) {
       return oldValue;
     }
 
-    // Format the number with the dollar symbol and commas as thousand separators.
+    // Format the number with the dollar symbol and commas as thousand separators
     final formattedText = _formatter.format(value);
 
-    // Return the new value with the formatted text and adjust the cursor position.
+    // Return the new value with the formatted text and adjust the cursor position
     return newValue.copyWith(
       text: formattedText,
       selection: TextSelection.collapsed(offset: formattedText.length),
